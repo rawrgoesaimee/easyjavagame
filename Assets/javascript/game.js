@@ -56,7 +56,7 @@ document.onkeydown = function(event){
     left--;
 
     let letter = event.key.toLowerCase();
-    letters.push(letter);
+    guessedLetters.push(letters);
     updateGuessesLeft();
     updateLetterToGuess();
 
