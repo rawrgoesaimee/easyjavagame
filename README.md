@@ -1,0 +1,2 @@
+# easyjavagame
+Simple JavaScript game
