@@ -31,7 +31,7 @@ let wins = 0;
 let losses = 0;
 
 function updateLetterToGuess(){
-    guessedLetters[Math.floor(Math.random() * letters.length)]; 
+    letterToGuess = letters[Math.floor(Math.random() * letters.length)];
 } 
 
 function updateGuessesLeft(){
@@ -44,6 +44,7 @@ function updateGuessesSoFar(){
 
 
 let reset = function(){
+
     left = 9;
     guessedLetters = [];
     updateGuessesLeft();
@@ -52,15 +53,17 @@ let reset = function(){
 
     
 }
-document.onkeydown = function(event){
+reset(); // starting the game 
+
+document.onkeydown = function(event){ // every key press
     left--;
 
     let letter = event.key.toLowerCase();
-    guessedLetters.push(letters);
+    guessedLetters.push(letter);
     updateGuessesLeft();
-    updateLetterToGuess();
+    // updateLetterToGuess();
 
-    if (letters === letterToGuess){
+    if (letter === letterToGuess){
             wins++;
             document.querySelector("#wins").innerHTML = "wins: " + wins;
             reset();
